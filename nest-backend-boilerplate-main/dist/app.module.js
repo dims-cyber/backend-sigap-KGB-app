@@ -49,6 +49,11 @@ const auth_module_1 = require("./modules/auth/auth.module");
 const admin_module_1 = require("./modules/admin/admin.module");
 const prisma_module_1 = require("./core/prisma/prisma.module");
 const pegawai_module_1 = require("./modules/pegawai/pegawai.module");
+const kgb_module_1 = require("./modules/kgb/kgb.module");
+const dashboard_module_1 = require("./modules/dashboard/dashboard.module");
+const kenaikan_pangkat_controller_1 = require("./modules/kenaikan-pangkat/kenaikan-pangkat.controller");
+const kenaikan_pangkat_module_1 = require("./modules/kenaikan-pangkat/kenaikan-pangkat.module");
+const kenaikan_pangkat_service_1 = require("./modules/kenaikan-pangkat/kenaikan-pangkat.service");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -68,7 +73,12 @@ exports.AppModule = AppModule = __decorate([
             auth_module_1.AuthModule,
             admin_module_1.AdminModule,
             pegawai_module_1.PegawaiModule,
+            kgb_module_1.KgbModule,
+            dashboard_module_1.DashboardModule,
+            kenaikan_pangkat_module_1.KenaikanPangkatModule,
         ],
+        controllers: [kenaikan_pangkat_controller_1.KenaikanPangkatController],
+        providers: [kenaikan_pangkat_service_1.KenaikanPangkatService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

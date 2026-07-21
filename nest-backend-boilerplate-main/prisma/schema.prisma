@@ -41,9 +41,54 @@ model Pegawai {
   pangkat       String
   golongan      String
   jabatan       String
-  nomorSk    String?
-  tanggalSK  DateTime?
+  nomorSk       String?
+  tanggalSK     DateTime?
   tmtTerakhir   DateTime?
+
+  kgb               Kgb[]
+  pensiun           Pensiun[]
+  kenaikanPangkat   KenaikanPangkat[]
+
   createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt 
+  updatedAt     DateTime @updatedAt
+}
+
+model Kgb {
+  id             Int      @id @default(autoincrement())
+  pegawaiId      Int
+
+  pegawai        Pegawai @relation(fields: [pegawaiId], references:[id])
+
+  nomorSk        String?
+  tanggalSk      DateTime?
+  tmtTerakhir    DateTime?
+  tmtBerikutnya  DateTime?
+  status         String?
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+model KenaikanPangkat {
+  id              Int      @id @default(autoincrement())
+
+  pegawaiId       Int
+  pegawai         Pegawai @relation(fields: [pegawaiId], references: [id])
+
+  pangkatBaru     String
+  golonganBaru    String
+  tmtKenaikan     DateTime
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Pensiun {
+  id              Int      @id @default(autoincrement())
+  pegawaiId       Int
+  tanggalPensiun  DateTime
+
+  pegawai         Pegawai  @relation(fields: [pegawaiId], references: [id])
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }

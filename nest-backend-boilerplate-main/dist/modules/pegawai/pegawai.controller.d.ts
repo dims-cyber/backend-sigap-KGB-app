@@ -5,6 +5,9 @@ export declare class PegawaiController {
     private readonly pegawaiService;
     constructor(pegawaiService: PegawaiService);
     findAll(): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         nip: string;
         nama: string;
         pangkat: string;
@@ -13,11 +16,11 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
     }[]>;
     findOne(id: number): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         nip: string;
         nama: string;
         pangkat: string;
@@ -26,11 +29,11 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     create(createPegawaiDto: CreatePegawaiDto): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         nip: string;
         nama: string;
         pangkat: string;
@@ -39,11 +42,11 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     update(id: number, updatePegawaiDto: UpdatePegawaiDto): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         nip: string;
         nama: string;
         pangkat: string;
@@ -52,11 +55,11 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     remove(id: number): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         nip: string;
         nama: string;
         pangkat: string;
@@ -65,8 +68,5 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
 }
