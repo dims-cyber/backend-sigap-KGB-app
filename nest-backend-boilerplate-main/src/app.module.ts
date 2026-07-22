@@ -12,26 +12,36 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { KenaikanPangkatController } from './modules/kenaikan-pangkat/kenaikan-pangkat.controller';
 import { KenaikanPangkatModule } from './modules/kenaikan-pangkat/kenaikan-pangkat.module';
 import { KenaikanPangkatService } from './modules/kenaikan-pangkat/kenaikan-pangkat.service';
+import { NotificationModule } from './modules/notification/notification.module';
+import {ScheduleModule} from "@nestjs/schedule";
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // agar bisa diakses di semua modul
+      isGlobal: true,
       validationSchema: Joi.object({
         DATABASE_URL: Joi.string().required(),
         JWT_SECRET: Joi.string().required(),
+
+         MAIL_HOST: Joi.string().required(),
+         MAIL_PORT: Joi.number().required(),
+         MAIL_USER: Joi.string().required(),
+         MAIL_PASSWORD: Joi.string().required(),
+         MAIL_FROM: Joi.string().required(),
       }),
     }),
-    PrismaModule, 
-    ProductModule, 
-    UserModule, 
-    AuthModule, 
+
+    ScheduleModule.forRoot(),
+
+    PrismaModule,
+    ProductModule,
+    UserModule,
+    AuthModule,
     AdminModule,
     PegawaiModule,
     KgbModule,
     DashboardModule,
     KenaikanPangkatModule,
+    NotificationModule,
   ],
-  controllers: [KenaikanPangkatController],
-  providers: [KenaikanPangkatService],
 })
 export class AppModule {}

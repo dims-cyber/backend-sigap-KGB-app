@@ -5,12 +5,22 @@ export declare class DashboardController {
     findAll(): Promise<{
         totalPegawai: number;
         totalKgb: number;
+        totalKenaikanPangkat: number;
         kgb30Hari: number;
         kgbSudah: number;
+        kenaikanPangkat30Hari: number;
+        kenaikanPangkatSudah: number;
         statistik: {
-            sudah: number;
-            segera: number;
-            normal: number;
+            kgb: {
+                sudah: number;
+                segera: number;
+                normal: number;
+            };
+            kenaikanPangkat: {
+                sudah: number;
+                segera: number;
+                normal: number;
+            };
         };
         pensiun6Bulan: number;
         listPensiun6Bulan: ({
@@ -26,6 +36,7 @@ export declare class DashboardController {
                 nomorSk: string | null;
                 tanggalSK: Date | null;
                 tmtTerakhir: Date | null;
+                nomorHp: string | null;
             };
         } & {
             createdAt: Date;
@@ -47,6 +58,7 @@ export declare class DashboardController {
                 nomorSk: string | null;
                 tanggalSK: Date | null;
                 tmtTerakhir: Date | null;
+                nomorHp: string | null;
             };
         } & {
             createdAt: Date;
@@ -72,6 +84,7 @@ export declare class DashboardController {
                 nomorSk: string | null;
                 tanggalSK: Date | null;
                 tmtTerakhir: Date | null;
+                nomorHp: string | null;
             };
         } & {
             createdAt: Date;
@@ -83,6 +96,54 @@ export declare class DashboardController {
             tanggalSk: Date | null;
             tmtBerikutnya: Date | null;
             status: string | null;
+        })[];
+        listKenaikanPangkat30Hari: ({
+            pegawai: {
+                createdAt: Date;
+                updatedAt: Date;
+                id: number;
+                nip: string;
+                nama: string;
+                pangkat: string;
+                golongan: string;
+                jabatan: string;
+                nomorSk: string | null;
+                tanggalSK: Date | null;
+                tmtTerakhir: Date | null;
+                nomorHp: string | null;
+            };
+        } & {
+            createdAt: Date;
+            updatedAt: Date;
+            id: number;
+            pegawaiId: number;
+            pangkatBaru: string;
+            golonganBaru: string;
+            tmtKenaikan: Date;
+        })[];
+        listKenaikanPangkatSudah: ({
+            pegawai: {
+                createdAt: Date;
+                updatedAt: Date;
+                id: number;
+                nip: string;
+                nama: string;
+                pangkat: string;
+                golongan: string;
+                jabatan: string;
+                nomorSk: string | null;
+                tanggalSK: Date | null;
+                tmtTerakhir: Date | null;
+                nomorHp: string | null;
+            };
+        } & {
+            createdAt: Date;
+            updatedAt: Date;
+            id: number;
+            pegawaiId: number;
+            pangkatBaru: string;
+            golonganBaru: string;
+            tmtKenaikan: Date;
         })[];
     }>;
 }

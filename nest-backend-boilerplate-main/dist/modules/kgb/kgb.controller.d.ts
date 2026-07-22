@@ -17,6 +17,7 @@ export declare class KgbController {
             nomorSk: string | null;
             tanggalSK: Date | null;
             tmtTerakhir: Date | null;
+            nomorHp: string | null;
         };
     } & {
         createdAt: Date;
@@ -42,6 +43,7 @@ export declare class KgbController {
             nomorSk: string | null;
             tanggalSK: Date | null;
             tmtTerakhir: Date | null;
+            nomorHp: string | null;
         };
     } & {
         createdAt: Date;

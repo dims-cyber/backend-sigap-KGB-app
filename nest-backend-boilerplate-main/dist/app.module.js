@@ -51,9 +51,9 @@ const prisma_module_1 = require("./core/prisma/prisma.module");
 const pegawai_module_1 = require("./modules/pegawai/pegawai.module");
 const kgb_module_1 = require("./modules/kgb/kgb.module");
 const dashboard_module_1 = require("./modules/dashboard/dashboard.module");
-const kenaikan_pangkat_controller_1 = require("./modules/kenaikan-pangkat/kenaikan-pangkat.controller");
 const kenaikan_pangkat_module_1 = require("./modules/kenaikan-pangkat/kenaikan-pangkat.module");
-const kenaikan_pangkat_service_1 = require("./modules/kenaikan-pangkat/kenaikan-pangkat.service");
+const notification_module_1 = require("./modules/notification/notification.module");
+const schedule_1 = require("@nestjs/schedule");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -65,8 +65,14 @@ exports.AppModule = AppModule = __decorate([
                 validationSchema: Joi.object({
                     DATABASE_URL: Joi.string().required(),
                     JWT_SECRET: Joi.string().required(),
+                    MAIL_HOST: Joi.string().required(),
+                    MAIL_PORT: Joi.number().required(),
+                    MAIL_USER: Joi.string().required(),
+                    MAIL_PASSWORD: Joi.string().required(),
+                    MAIL_FROM: Joi.string().required(),
                 }),
             }),
+            schedule_1.ScheduleModule.forRoot(),
             prisma_module_1.PrismaModule,
             product_module_1.ProductModule,
             user_module_1.UserModule,
@@ -76,9 +82,8 @@ exports.AppModule = AppModule = __decorate([
             kgb_module_1.KgbModule,
             dashboard_module_1.DashboardModule,
             kenaikan_pangkat_module_1.KenaikanPangkatModule,
+            notification_module_1.NotificationModule,
         ],
-        controllers: [kenaikan_pangkat_controller_1.KenaikanPangkatController],
-        providers: [kenaikan_pangkat_service_1.KenaikanPangkatService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

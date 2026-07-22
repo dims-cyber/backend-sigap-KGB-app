@@ -6,9 +6,9 @@ export declare class KenaikanPangkatService {
     constructor(prisma: PrismaService);
     findAll(): Promise<({
         pegawai: {
-            id: number;
             createdAt: Date;
             updatedAt: Date;
+            id: number;
             nip: string;
             nama: string;
             pangkat: string;
@@ -17,30 +17,31 @@ export declare class KenaikanPangkatService {
             nomorSk: string | null;
             tanggalSK: Date | null;
             tmtTerakhir: Date | null;
+            nomorHp: string | null;
         };
     } & {
+        createdAt: Date;
+        updatedAt: Date;
         id: number;
         pegawaiId: number;
         pangkatBaru: string;
         golonganBaru: string;
         tmtKenaikan: Date;
-        createdAt: Date;
-        updatedAt: Date;
     })[]>;
     create(createDto: CreateKenaikanPangkatDto): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
         id: number;
         pegawaiId: number;
         pangkatBaru: string;
         golonganBaru: string;
         tmtKenaikan: Date;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     findOne(id: number): Promise<{
         pegawai: {
-            id: number;
             createdAt: Date;
             updatedAt: Date;
+            id: number;
             nip: string;
             nama: string;
             pangkat: string;
@@ -49,32 +50,33 @@ export declare class KenaikanPangkatService {
             nomorSk: string | null;
             tanggalSK: Date | null;
             tmtTerakhir: Date | null;
+            nomorHp: string | null;
         };
     } & {
+        createdAt: Date;
+        updatedAt: Date;
         id: number;
         pegawaiId: number;
         pangkatBaru: string;
         golonganBaru: string;
         tmtKenaikan: Date;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     update(id: number, updateDto: UpdateKenaikanPangkatDto): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
         id: number;
         pegawaiId: number;
         pangkatBaru: string;
         golonganBaru: string;
         tmtKenaikan: Date;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     remove(id: number): Promise<{
+        createdAt: Date;
+        updatedAt: Date;
         id: number;
         pegawaiId: number;
         pangkatBaru: string;
         golonganBaru: string;
         tmtKenaikan: Date;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
 }

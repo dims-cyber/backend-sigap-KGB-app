@@ -41,6 +41,9 @@ model Pegawai {
   pangkat       String
   golongan      String
   jabatan       String
+
+  nomorHp       String?
+
   nomorSk       String?
   tanggalSK     DateTime?
   tmtTerakhir   DateTime?

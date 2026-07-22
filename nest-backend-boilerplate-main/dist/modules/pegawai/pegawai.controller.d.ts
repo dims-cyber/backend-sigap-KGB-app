@@ -16,6 +16,7 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
+        nomorHp: string | null;
     }[]>;
     findOne(id: number): Promise<{
         createdAt: Date;
@@ -29,6 +30,7 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
+        nomorHp: string | null;
     }>;
     create(createPegawaiDto: CreatePegawaiDto): Promise<{
         createdAt: Date;
@@ -42,6 +44,7 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
+        nomorHp: string | null;
     }>;
     update(id: number, updatePegawaiDto: UpdatePegawaiDto): Promise<{
         createdAt: Date;
@@ -55,6 +58,7 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
+        nomorHp: string | null;
     }>;
     remove(id: number): Promise<{
         createdAt: Date;
@@ -68,5 +72,6 @@ export declare class PegawaiController {
         nomorSk: string | null;
         tanggalSK: Date | null;
         tmtTerakhir: Date | null;
+        nomorHp: string | null;
     }>;
 }
