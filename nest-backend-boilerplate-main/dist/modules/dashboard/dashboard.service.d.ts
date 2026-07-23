@@ -28,6 +28,7 @@ export declare class DashboardService {
                 createdAt: Date;
                 updatedAt: Date;
                 id: number;
+                email: string | null;
                 nip: string;
                 nama: string;
                 pangkat: string;
@@ -50,6 +51,7 @@ export declare class DashboardService {
                 createdAt: Date;
                 updatedAt: Date;
                 id: number;
+                email: string | null;
                 nip: string;
                 nama: string;
                 pangkat: string;
@@ -61,21 +63,20 @@ export declare class DashboardService {
                 nomorHp: string | null;
             };
         } & {
-            createdAt: Date;
-            updatedAt: Date;
             id: number;
-            nomorSk: string | null;
-            tmtTerakhir: Date | null;
+            nomorSk: string;
             pegawaiId: number;
-            tanggalSk: Date | null;
-            tmtBerikutnya: Date | null;
-            status: string | null;
+            tanggalSk: Date;
+            tmtKgb: Date;
+            gajiLama: number;
+            gajiBaru: number;
         })[];
         listKgbSudah: ({
             pegawai: {
                 createdAt: Date;
                 updatedAt: Date;
                 id: number;
+                email: string | null;
                 nip: string;
                 nama: string;
                 pangkat: string;
@@ -87,21 +88,20 @@ export declare class DashboardService {
                 nomorHp: string | null;
             };
         } & {
-            createdAt: Date;
-            updatedAt: Date;
             id: number;
-            nomorSk: string | null;
-            tmtTerakhir: Date | null;
+            nomorSk: string;
             pegawaiId: number;
-            tanggalSk: Date | null;
-            tmtBerikutnya: Date | null;
-            status: string | null;
+            tanggalSk: Date;
+            tmtKgb: Date;
+            gajiLama: number;
+            gajiBaru: number;
         })[];
         listKenaikanPangkat30Hari: ({
             pegawai: {
                 createdAt: Date;
                 updatedAt: Date;
                 id: number;
+                email: string | null;
                 nip: string;
                 nama: string;
                 pangkat: string;
@@ -126,6 +126,7 @@ export declare class DashboardService {
                 createdAt: Date;
                 updatedAt: Date;
                 id: number;
+                email: string | null;
                 nip: string;
                 nama: string;
                 pangkat: string;

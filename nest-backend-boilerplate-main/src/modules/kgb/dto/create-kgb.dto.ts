@@ -1,7 +1,7 @@
 import {
   IsDateString,
   IsInt,
-  IsOptional,
+  IsNumber,
   IsString,
 } from 'class-validator';
 
@@ -9,23 +9,18 @@ export class CreateKgbDto {
   @IsInt()
   pegawaiId: number;
 
-  @IsOptional()
   @IsString()
-  nomorSk?: string;
+  nomorSk: string;
 
-  @IsOptional()
   @IsDateString()
-  tanggalSk?: string;
+  tanggalSk: string;
 
-  @IsOptional()
   @IsDateString()
-  tmtTerakhir?: string;
+  tmtKgb: string;
 
-  @IsOptional()
-  @IsDateString()
-  tmtBerikutnya?: string;
+  @IsNumber()
+  gajiLama: number;
 
-  @IsOptional()
-  @IsString()
-  status?: string;
+  @IsNumber()
+  gajiBaru: number;
 }

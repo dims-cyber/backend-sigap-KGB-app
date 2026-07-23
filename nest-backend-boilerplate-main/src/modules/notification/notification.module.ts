@@ -6,10 +6,12 @@ import { NotificationController } from './notification.controller';
 import { NotificationService } from './notification.service';
 import { NotificationScheduler } from './notification.scheduler';
 import { DashboardModule } from '../dashboard/dashboard.module';
+import { PrismaModule } from 'src/core/prisma/prisma.module';
 @Module({
   imports: [
     ConfigModule,
     DashboardModule,
+    PrismaModule,
 
     MailerModule.forRootAsync({
       imports: [ConfigModule],

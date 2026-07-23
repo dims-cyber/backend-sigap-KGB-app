@@ -9,6 +9,7 @@ export declare class KenaikanPangkatService {
             createdAt: Date;
             updatedAt: Date;
             id: number;
+            email: string | null;
             nip: string;
             nama: string;
             pangkat: string;
@@ -42,6 +43,7 @@ export declare class KenaikanPangkatService {
             createdAt: Date;
             updatedAt: Date;
             id: number;
+            email: string | null;
             nip: string;
             nama: string;
             pangkat: string;

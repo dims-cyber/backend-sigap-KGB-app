@@ -14,6 +14,7 @@ const notification_controller_1 = require("./notification.controller");
 const notification_service_1 = require("./notification.service");
 const notification_scheduler_1 = require("./notification.scheduler");
 const dashboard_module_1 = require("../dashboard/dashboard.module");
+const prisma_module_1 = require("../../core/prisma/prisma.module");
 let NotificationModule = class NotificationModule {
 };
 exports.NotificationModule = NotificationModule;
@@ -22,6 +23,7 @@ exports.NotificationModule = NotificationModule = __decorate([
         imports: [
             config_1.ConfigModule,
             dashboard_module_1.DashboardModule,
+            prisma_module_1.PrismaModule,
             mailer_1.MailerModule.forRootAsync({
                 imports: [config_1.ConfigModule],
                 inject: [config_1.ConfigService],

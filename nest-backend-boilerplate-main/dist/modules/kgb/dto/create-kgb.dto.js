@@ -15,9 +15,9 @@ class CreateKgbDto {
     pegawaiId;
     nomorSk;
     tanggalSk;
-    tmtTerakhir;
-    tmtBerikutnya;
-    status;
+    tmtKgb;
+    gajiLama;
+    gajiBaru;
 }
 exports.CreateKgbDto = CreateKgbDto;
 __decorate([
@@ -25,28 +25,23 @@ __decorate([
     __metadata("design:type", Number)
 ], CreateKgbDto.prototype, "pegawaiId", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateKgbDto.prototype, "nomorSk", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsDateString)(),
     __metadata("design:type", String)
 ], CreateKgbDto.prototype, "tanggalSk", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsDateString)(),
     __metadata("design:type", String)
-], CreateKgbDto.prototype, "tmtTerakhir", void 0);
+], CreateKgbDto.prototype, "tmtKgb", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsDateString)(),
-    __metadata("design:type", String)
-], CreateKgbDto.prototype, "tmtBerikutnya", void 0);
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], CreateKgbDto.prototype, "gajiLama", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateKgbDto.prototype, "status", void 0);
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], CreateKgbDto.prototype, "gajiBaru", void 0);
 //# sourceMappingURL=create-kgb.dto.js.map

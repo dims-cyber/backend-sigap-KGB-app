@@ -28,7 +28,7 @@ let DashboardService = class DashboardService {
         batas6Bulan.setMonth(today.getMonth() + 6);
         const listKgb30Hari = await this.prisma.kgb.findMany({
             where: {
-                tmtBerikutnya: {
+                tmtKgb: {
                     gte: today,
                     lte: batas30Hari,
                 },
@@ -39,7 +39,7 @@ let DashboardService = class DashboardService {
         });
         const listKgbSudah = await this.prisma.kgb.findMany({
             where: {
-                tmtBerikutnya: {
+                tmtKgb: {
                     lt: today,
                 },
             },
@@ -49,14 +49,14 @@ let DashboardService = class DashboardService {
         });
         const statusSudah = await this.prisma.kgb.count({
             where: {
-                tmtBerikutnya: {
+                tmtKgb: {
                     lt: today,
                 },
             },
         });
         const statusSegera = await this.prisma.kgb.count({
             where: {
-                tmtBerikutnya: {
+                tmtKgb: {
                     gte: today,
                     lte: batas30Hari,
                 },
@@ -64,7 +64,7 @@ let DashboardService = class DashboardService {
         });
         const statusNormal = await this.prisma.kgb.count({
             where: {
-                tmtBerikutnya: {
+                tmtKgb: {
                     gt: batas30Hari,
                 },
             },

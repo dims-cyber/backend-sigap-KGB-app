@@ -9,6 +9,7 @@ export declare class KgbService {
             createdAt: Date;
             updatedAt: Date;
             id: number;
+            email: string | null;
             nip: string;
             nama: string;
             pangkat: string;
@@ -20,21 +21,20 @@ export declare class KgbService {
             nomorHp: string | null;
         };
     } & {
-        createdAt: Date;
-        updatedAt: Date;
         id: number;
-        nomorSk: string | null;
-        tmtTerakhir: Date | null;
+        nomorSk: string;
         pegawaiId: number;
-        tanggalSk: Date | null;
-        tmtBerikutnya: Date | null;
-        status: string | null;
+        tanggalSk: Date;
+        tmtKgb: Date;
+        gajiLama: number;
+        gajiBaru: number;
     })[]>;
     findOne(id: number): Promise<{
         pegawai: {
             createdAt: Date;
             updatedAt: Date;
             id: number;
+            email: string | null;
             nip: string;
             nama: string;
             pangkat: string;
@@ -46,47 +46,39 @@ export declare class KgbService {
             nomorHp: string | null;
         };
     } & {
-        createdAt: Date;
-        updatedAt: Date;
         id: number;
-        nomorSk: string | null;
-        tmtTerakhir: Date | null;
+        nomorSk: string;
         pegawaiId: number;
-        tanggalSk: Date | null;
-        tmtBerikutnya: Date | null;
-        status: string | null;
+        tanggalSk: Date;
+        tmtKgb: Date;
+        gajiLama: number;
+        gajiBaru: number;
     }>;
     create(createKgbDto: CreateKgbDto): Promise<{
-        createdAt: Date;
-        updatedAt: Date;
         id: number;
-        nomorSk: string | null;
-        tmtTerakhir: Date | null;
+        nomorSk: string;
         pegawaiId: number;
-        tanggalSk: Date | null;
-        tmtBerikutnya: Date | null;
-        status: string | null;
+        tanggalSk: Date;
+        tmtKgb: Date;
+        gajiLama: number;
+        gajiBaru: number;
     }>;
     update(id: number, updateKgbDto: UpdateKgbDto): Promise<{
-        createdAt: Date;
-        updatedAt: Date;
         id: number;
-        nomorSk: string | null;
-        tmtTerakhir: Date | null;
+        nomorSk: string;
         pegawaiId: number;
-        tanggalSk: Date | null;
-        tmtBerikutnya: Date | null;
-        status: string | null;
+        tanggalSk: Date;
+        tmtKgb: Date;
+        gajiLama: number;
+        gajiBaru: number;
     }>;
     remove(id: number): Promise<{
-        createdAt: Date;
-        updatedAt: Date;
         id: number;
-        nomorSk: string | null;
-        tmtTerakhir: Date | null;
+        nomorSk: string;
         pegawaiId: number;
-        tanggalSk: Date | null;
-        tmtBerikutnya: Date | null;
-        status: string | null;
+        tanggalSk: Date;
+        tmtKgb: Date;
+        gajiLama: number;
+        gajiBaru: number;
     }>;
 }

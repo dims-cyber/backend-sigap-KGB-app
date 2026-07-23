@@ -36,6 +36,7 @@ model Product {
 
 model Pegawai {
   id            Int      @id @default(autoincrement())
+  notificationLogs NotificationLog[]
   nip           String   @unique
   nama          String
   pangkat       String
@@ -43,6 +44,7 @@ model Pegawai {
   jabatan       String
 
   nomorHp       String?
+  email         String? @unique
 
   nomorSk       String?
   tanggalSK     DateTime?
@@ -57,20 +59,20 @@ model Pegawai {
 }
 
 model Kgb {
-  id             Int      @id @default(autoincrement())
-  pegawaiId      Int
+  id               Int      @id @default(autoincrement())
 
-  pegawai        Pegawai @relation(fields: [pegawaiId], references:[id])
+  pegawaiId        Int
+  nomorSk          String
+  tanggalSk        DateTime
+  tmtKgb           DateTime
+  gajiLama         Int
+  gajiBaru         Int
 
-  nomorSk        String?
-  tanggalSk      DateTime?
-  tmtTerakhir    DateTime?
-  tmtBerikutnya  DateTime?
-  status         String?
+  pegawai          Pegawai @relation(fields: [pegawaiId], references: [id])
 
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  notificationLogs NotificationLog[]
 }
+
 model KenaikanPangkat {
   id              Int      @id @default(autoincrement())
 
@@ -81,17 +83,41 @@ model KenaikanPangkat {
   golonganBaru    String
   tmtKenaikan     DateTime
 
+  notificationLog NotificationLog[]
+
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
-
 model Pensiun {
-  id              Int      @id @default(autoincrement())
-  pegawaiId       Int
-  tanggalPensiun  DateTime
+  id               Int      @id @default(autoincrement())
 
-  pegawai         Pegawai  @relation(fields: [pegawaiId], references: [id])
+  pegawaiId        Int
+  tanggalPensiun   DateTime
+  nomorSk          String?
 
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  pegawai          Pegawai @relation(fields: [pegawaiId], references: [id])
+
+  notificationLogs NotificationLog[]
+}
+
+model NotificationLog {
+  id                  Int      @id @default(autoincrement())
+
+  pegawaiId           Int
+  kenaikanPangkatId   Int?
+  kgbId               Int?
+  pensiunId           Int?
+
+  jenis               String
+
+  source              String   @default("AUTO")
+
+  createdAt           DateTime @default(now())
+
+  pegawai             Pegawai            @relation(fields: [pegawaiId], references: [id])
+  kenaikanPangkat     KenaikanPangkat?   @relation(fields: [kenaikanPangkatId], references: [id])
+  kgb                 Kgb?               @relation(fields: [kgbId], references: [id])
+  pensiun             Pensiun?           @relation(fields: [pensiunId], references: [id])
+
+  @@unique([pegawaiId, kenaikanPangkatId, kgbId, pensiunId, jenis, source])
 }
